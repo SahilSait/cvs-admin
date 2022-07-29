@@ -4,6 +4,8 @@ import QRCode from "react-qr-code";
 import { Web3Storage } from "web3.storage";
 import Certification from "./artifacts/contracts/Certification.sol/Certification.json";
 import { ethers } from "ethers";
+import { AiOutlineTag, AiOutlineUser } from "react-icons/ai";
+import { jsPDF } from "jspdf";
 
 function getAccessToken() {
   return `${process.env.REACT_APP_ACCESS_TOKEN}`;
@@ -26,6 +28,8 @@ const Upload = () => {
   const [fileName, setFileName] = useState("");
   const [selectedFile, setSelectedFile] = useState();
   const [contractAddress, setContractAddress] = useState("");
+
+  console.log(contractAddress);
 
   const deployDocument = async (name, regNo, fileName, ipfsHash) => {
     console.log(fileName);
@@ -81,34 +85,78 @@ const Upload = () => {
     }
   };
 
+  //   const download = () =>{
+  //     var pdf = new jsPDF({
+  //       orientation: "landscape",
+  //       unit: "mm",
+  //       format: [84, 40]
+  //   });
+
+  //   let base64Image = ''
+  //   console.log(base64Image);
+
+  //   // pdf.addImage(base64Image, 'png', 0, 0, 40, 40);
+  //   pdf.save('generated.pdf');
+  // };
+
   return (
-    <div>
+    <div className="outer">
+      <div className="logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/1200px-MetaMask_Fox.svg.png"
+          alt="logo"
+        />
+      </div>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={name}
-          placeholder="Name"
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type="text"
-          value={regNo}
-          placeholder="Registration No"
-          onChange={(e) => setRegNo(e.target.value)}
-        />
-        <input
-          type="file"
-          placeholder="upload"
-          onChange={(e) => {
-            setFileName(e.target.files[0].name);
-            setSelectedFile(e.target.files);
-          }}
-        />
-        <button type="submit">Submit</button>
+        <div className="inputbox">
+          <div className="icon">
+            <AiOutlineUser size={25} />
+          </div>
+
+          <input
+            type="text"
+            value={name}
+            placeholder="Name"
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className="inputbox">
+          <div className="icon">
+            <AiOutlineTag size={25} />
+          </div>
+          <input
+            type="text"
+            value={regNo}
+            placeholder="Registration No"
+            onChange={(e) => setRegNo(e.target.value)}
+          />
+        </div>
+        <div className="inputbox">
+          <div className="icon" id="x">
+            <AiOutlineTag size={25} />
+          </div>
+          <input
+            className="input"
+            type="file"
+            id="file"
+            placeholder="upload"
+            onChange={(e) => {
+              setFileName(e.target.files[0].name);
+              setSelectedFile(e.target.files);
+            }}
+          />
+        </div>
+        <br></br>
+        <button className="button" type="submit">
+          Submit
+        </button>
       </form>
       {contractAddress && (
-        <div style={{ background: "white", padding: "16px" }}>
-          <QRCode value={contractAddress} />
+        <div>
+          <div style={{ background: "white", padding: "16px", margin: "20px" }}>
+            <QRCode value={contractAddress} />
+          </div>
+          {/* <button onClick={download}>Download</button> */}
         </div>
       )}
     </div>
