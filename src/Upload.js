@@ -4,6 +4,7 @@ import QRCode from "react-qr-code";
 import { Web3Storage } from "web3.storage";
 import Certification from "./artifacts/contracts/Certification.sol/Certification.json";
 import { ethers } from "ethers";
+import { AiOutlineTag, AiOutlineUser } from "react-icons/ai";
 
 function getAccessToken() {
   return `${process.env.REACT_APP_ACCESS_TOKEN}`;
@@ -82,29 +83,55 @@ const Upload = () => {
   };
 
   return (
-    <div>
+    <div className="outer">
+      <div className="logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/1200px-MetaMask_Fox.svg.png"
+          alt="logo"
+        />
+      </div>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={name}
-          placeholder="Name"
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type="text"
-          value={regNo}
-          placeholder="Registration No"
-          onChange={(e) => setRegNo(e.target.value)}
-        />
-        <input
-          type="file"
-          placeholder="upload"
-          onChange={(e) => {
-            setFileName(e.target.files[0].name);
-            setSelectedFile(e.target.files);
-          }}
-        />
-        <button type="submit">Submit</button>
+        <div className="inputbox">
+          <div className="icon">
+            <AiOutlineUser size={25} />
+          </div>
+           <input
+            type="text"
+            value={name}
+            placeholder="Name"
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className="inputbox">
+          <div className="icon">
+            <AiOutlineTag size={25} />
+          </div>
+          <input
+            type="text"
+            value={regNo}
+            placeholder="Registration No"
+            onChange={(e) => setRegNo(e.target.value)}
+          />
+        </div>
+        <div className="inputbox">
+          <div className="icon" id="x">
+            <AiOutlineTag size={25} />
+          </div>
+          <input
+            className="input"
+            type="file"
+            id="file"
+            placeholder="upload"
+            onChange={(e) => {
+              setFileName(e.target.files[0].name);
+              setSelectedFile(e.target.files);
+            }}
+          />
+        </div>
+        <br></br>
+        <button className="button" type="submit">
+          Submit
+        </button>
       </form>
       {contractAddress && (
         <div style={{ background: "white", padding: "16px" }}>

@@ -5,9 +5,306 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url(./assets/pattern.png);
+  background-size: cover;
+  
+
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.outer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.outer .logo{
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.outer .logo img{
+  height: 100%;
+  width: 100%;
+  
+  object-fit: cover;
+}
+
+.outer form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  
+}
+.outer form input{
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  background: transparent;
+  border: none;
+  -webkit-appearance: none;
+  color:rgb(255, 255, 255);
+  font-size:small;
+  
+}
+.outer form input:focus{
+  outline: none;
+}
+
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(255, 255, 255);
+  opacity: .5; /* Firefox */
+
+}
+.logo{
+  background-color: transparent;
+  position: relative;
+  animation-name: aimg;
+  animation-duration: 3.5s;
+  animation-delay: -1s;
+  border-radius: 50px;
+
+}
+
+.inputbox{
+  border: 1.5px solid transparent;
+  display: flex;
+  align-items: center;
+  font-weight: 800px;
+  justify-content: center;
+  width: 255px;
+  padding: 5px;
+  border-radius: 200px;
+  box-shadow: 0px 6px 6px 0 rgb(3, 30, 74);
+  position: relative;
+  animation-name: input;
+  animation-duration: 2s;
+  animation-delay: -1s;
+  border-radius: 50px;
+  
+  
+}
+@keyframes input {
+  0%  {background-color:transparent;  }
+  50% {background-color: transparent; left: 0px; top: -400px;}
+  100%   {background-color:transparent; left:0px; top:0px;}
+  
+}
+.icon{
+  color: white;
+  padding-right: 10px;
+}
+#x{
+  opacity: 0;
+
+}
+.button{
+  background-color: #2148c1;
+  color: white;
+  font-size: large;
+  font-weight: 800px;
+  box-shadow: 0px 6px 6px 0 rgb(3, 30, 74);
+  border-radius: 5px;
+  width: 270px;
+  height: 45px;
+  border: none;
+  border-radius: 100px;
+  transition: .5s;
+  display: inline-block;
+  text-decoration: dotted;
+  cursor: auto;
+  margin: 0px ;
+  position: relative;
+  animation-name: button;
+  animation-duration: 3s;
+  animation-delay: -1s;
+  border-radius: 50px;
+}
+@keyframes button {
+  0%  {background-color:transparent;  }
+  50% {background-color: transparent; left: 0px; top: 200px;}
+  100%   {background-color:transparent; left:0px; top:0px;}
+  
+}
+
+
+.button:hover{
+  background-color: white;
+  border-color: #2148c1;
+  color: #2148c1;
+  font-size: large;
+  font-weight: 800px;
+  border-radius: 5px;
+  width: 250px;
+  height: 45px;
+  border: none;
+  box-shadow: 0px 6px 6px 0 rgb(3, 30, 74);
+  border-radius: 100px;
+  transition: .5s;
+  
+}
+.input[type=file]::file-selector-button{
+  transition: .5s;
+  opacity: .6;
+  color: #ffffff;
+  background-color: #2148c1;
+  margin-right: 10px;
+  margin-top: 5.6px;
+  cursor: auto;
+  border: none;
+  border-color: white;
+  border-radius: 20px;
+  align-items: center;
+}
+
+.input[type=file]::file-selector-button:hover{
+  transition: .5s;
+  color: #2148c1;
+  opacity: 1;
+  background-color: #ffffff ;
+  margin-right: 10px;
+  box-shadow: 0px 6px 6px 0 rgb(3, 30, 74);
+  cursor: pointer;
+  border: none;
+  align-items: center;
+  border-radius: 10px;
+}
+/*signin*/
+.souter{
+  
+}
+.simg{
+  margin-top: 30px;
+  width: 200px;
+  height: 200px;
+  background-color: transparent;
+  transition: 1s;
+  position: relative;
+  animation-name: aimg;
+  animation-duration: 5s;
+  animation-delay: -1s;
+  border-radius: 50px;
+}
+@keyframes aimg {
+  0%  {background-color:transparent;  }
+  50% {background-color: transparent; left: 0px; top: -300px;}
+  100%   {background-color:transparent; left:0px; top:0px;}
+  
+}
+
+.sbutton{
+  margin-top: 1px;
+  border: 1.5px solid white;
+  background-color: transparent;
+  border-color: transparent;
+  width: 230px;
+  font-size: 14px;
+  font-weight: 650;
+  display: flex;
+  transition: .5s;
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 200px;
+  box-shadow: 0px 6px 6px 0 rgb(3, 30, 74);
+  position: relative;
+  animation-name: abutton;
+  animation-duration: 3s;
+  animation-delay: -1s;
+  border-radius: 50px;
+  }
+  .sbutton:hover{
+    border: 1.5px solid white;
+    background-color: white;
+    border-color: transparent;
+    font-weight: 650;
+    width: 210px;
+    font-size: 14px;
+    transition: .5s;
+    display: flex;
+    color: #2148c1;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 200px;
+    box-shadow: 0px 6px 6px 0 rgb(3, 30, 74);
+    
+    }
+  @keyframes abutton {
+    0%  {background-color:transparent;  }
+    50% {background-color: transparent; left: -800px; top: 0px;}
+    100%   {background-color:transparent; left:0px; top:0px;}
+  }
+
+.s1about{
+    border: 1.5px solid white;
+    margin-top: 1%;
+    background-color: #2148c1;
+    border-color: transparent;
+    font-weight: bold;
+    text-decoration: none;
+    width: 200px;
+    font-size: 14px;
+    transition: .5s;
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 200px;
+    box-shadow: 0px 6px 6px 0 rgb(3, 30, 74);
+    position: relative;
+   border-radius: 200px;
+   animation-name: aabout;
+   animation-duration: 3s;
+   animation-delay: -1s;
+   border-radius: 50px;
+}
+@keyframes aabout {
+  0%  {background-color:transparent;  }
+  50% {background-color: transparent; left: 800px; top: 0px;}
+  100%   {background-color:transparent; left:0px; top:0px;}
+}
+.s1about:hover{
+  background-color: #ffffff;
+    border-color: transparent;
+    font-weight: 650;
+    text-decoration: none;
+    width: 180px;
+    font-size: 14px;
+    transition: .5s;
+    display: flex;
+    color: #2148c1;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 200px;
+    box-shadow: 0px 6px 6px 0 rgb(3, 30, 74);
+}
+.aimg{
+  color: #2148c1;
+  background-color: rgb(255, 255, 255);
+}
+
+
+
+
