@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import metamask from "./assets/metamask.svg";
 import { ethers } from "ethers";
+<<<<<<< HEAD
 import slogo from "./assets/logo.png";
+=======
+import logo from "./assets/logo.png";
+>>>>>>> main
 import { Link } from "react-router-dom";
 
 function Signin() {
@@ -40,6 +44,7 @@ function Signin() {
 
   return (
     <div className="outer">
+<<<<<<< HEAD
       <img className="u1img" src={slogo} width={200} height={200}></img>
       {haveMetamask ? (
         <div className="appheader">
@@ -70,6 +75,31 @@ function Signin() {
           About Us
         </a>
       </p>
+=======
+      <img src={logo} width={300} height={300} alt="logo"/>
+        {haveMetamask ? (
+          <div className="App-header">
+            {isConnected ? (
+              <div className="address">
+                <h3>Wallet Address:</h3>
+                <p>{accountAddress}</p>
+                <p className="info"> Connected Successfully</p>
+                <Link to="/upload"><button>DOCUMENTS UPLOAD</button></Link>
+              </div>
+            ) : (
+              <div className="button1">
+               <button className="btn" onClick={connectWallet}>
+                Connect
+              </button>
+              <img src={metamask} width={40} className="App-logo" alt="logo" />
+              </div>
+            )}
+          </div>
+        ) : (
+          <p>Please Install MataMask</p>
+        )}
+      
+>>>>>>> main
     </div>
   );
 }

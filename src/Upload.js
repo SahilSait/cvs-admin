@@ -5,7 +5,10 @@ import { Web3Storage } from "web3.storage";
 import Certification from "./artifacts/contracts/Certification.sol/Certification.json";
 import { ethers } from "ethers";
 import { AiOutlineTag, AiOutlineUser } from "react-icons/ai";
+<<<<<<< HEAD
 import slogo from "./assets/logo.png";
+=======
+>>>>>>> main
 import { jsPDF } from "jspdf";
 
 function getAccessToken() {
@@ -102,8 +105,16 @@ const Upload = () => {
 
   return (
     <div className="outer">
+<<<<<<< HEAD
       <div className="logo"src={slogo}>
       <img className="up2img" src={slogo}  ></img>
+=======
+      <div className="logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/1200px-MetaMask_Fox.svg.png"
+          alt="logo"
+        />
+>>>>>>> main
       </div>
       <form onSubmit={handleSubmit}>
         <div className="inputbox">
