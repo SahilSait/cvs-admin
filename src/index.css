@@ -76,12 +76,20 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 }
 .logo{
   background-color: transparent;
+  width: 250px;
+  height: 2500px;
+  padding: 20px;
   position: relative;
   animation-name: aimg;
-  animation-duration: 3.5s;
+  animation-duration: 5s;
   animation-delay: -1s;
-  border-radius: 50px;
 
+}
+@keyframes aimg {
+  0%  {background-color:transparent;  }
+  50% {background-color: transparent; left: 0px; top: -400px;}
+  100%   {background-color:transparent; left:0px; top:0px;}
+  
 }
 
 .inputbox{
@@ -90,13 +98,14 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   align-items: center;
   font-weight: 800px;
   justify-content: center;
+  margin-bottom: 1px;
   width: 255px;
   padding: 5px;
   border-radius: 200px;
   box-shadow: 0px 6px 6px 0 rgb(3, 30, 74);
   position: relative;
   animation-name: input;
-  animation-duration: 2s;
+  animation-duration: 3s;
   animation-delay: -1s;
   border-radius: 50px;
   
@@ -117,7 +126,7 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 }
 .button{
-  background-color: #2148c1;
+  background-color: transparent;
   color: white;
   font-size: large;
   font-weight: 800px;
@@ -134,7 +143,7 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   margin: 0px ;
   position: relative;
   animation-name: button;
-  animation-duration: 3s;
+  animation-duration: 4s;
   animation-delay: -1s;
   border-radius: 50px;
 }
@@ -188,28 +197,22 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   border-radius: 10px;
 }
 /*signin*/
-.souter{
-  
-}
-.simg{
+.u1img{
   margin-top: 30px;
   width: 200px;
   height: 200px;
   background-color: transparent;
-  transition: 1s;
   position: relative;
-  animation-name: aimg;
+  animation-name: u1img;
   animation-duration: 5s;
   animation-delay: -1s;
-  border-radius: 50px;
 }
-@keyframes aimg {
+@keyframes u1img {
   0%  {background-color:transparent;  }
-  50% {background-color: transparent; left: 0px; top: -300px;}
+  50% {background-color: transparent; left: 0px; top: -400px;}
   100%   {background-color:transparent; left:0px; top:0px;}
   
 }
-
 .sbutton{
   margin-top: 1px;
   border: 1.5px solid white;
@@ -258,7 +261,7 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 .s1about{
     border: 1.5px solid white;
     margin-top: 1%;
-    background-color: #2148c1;
+    background-color: transparent;
     border-color: transparent;
     font-weight: bold;
     text-decoration: none;
@@ -303,6 +306,94 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 .aimg{
   color: #2148c1;
   background-color: rgb(255, 255, 255);
+ 
+}
+.appheader{
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+}
+.address{
+  color: #ffffff;
+  text-align: center;
+  animation-name: uanimation;
+  position: relative;
+  animation-duration: 3s;
+  animation-delay: -1s;
+}
+.address2{
+  color: #ffffff;
+  animation-name: ianimation;
+  animation-duration: 6s;
+  position: relative;
+  animation-delay: -1s;
+}
+.info{
+  color: rgb(255, 255, 255);
+  position: relative;
+  animation-name: uanimation;
+  animation-duration: 5;
+  animation-name: info;
+  background: linear-gradient(-45deg, #24c313, #24c313, #ffffff, #ffffff);
+	background-size:2000%;
+  font-weight: 1000;
+  height: 20px;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animated_text 1s ease-in-out infinite;
+	-moz-animation: animated_text 1s ease-in-out infinite;
+	-webkit-animation: animated_text 1s ease-in-out infinite;
+}
+@keyframes ianimation {
+  0% { color: transparent; }
+  50%{color: transparent;}
+  100% { color: #ffffff;}
+}
+
+@keyframes uanimation {
+  0%  {background-color:transparent;  }
+    50% {background-color: transparent; left: -800px; top: 0px;}
+    100%   {background-color:transparent; left:0px; top:0px;}
+  
+}
+
+@keyframes animated_text {
+	0% { background-position: 0px 10%; }
+	50% { background-position: 100% 100%; }
+	100% { background-position: 0px 100%; }
+}
+
+@keyframes aabout {
+  0%  {background-color:transparent;  }
+  50% {background-color: transparent; left: 800px; top: 0px;}
+  100%   {background-color:transparent; left:0px; top:0px;}
+}
+.documentsupload{
+  color: #ffffff;
+  transition: .5s;
+  background-color: transparent;
+  border-color: transparent;
+  width: 230px;
+  font-weight: 590;
+  font-size: 13px;
+  align-items: center;
+  border-radius: 200px;
+  padding: 12px;
+  box-shadow: 0px 6px 6px 0 rgb(3, 30, 74);
+}
+.documentsupload:hover{
+  color: #2148c1;
+  background-color: white;
+  transition: .5s;
+  border-color: transparent;
+  width: 210px;
+  font-weight: 650;
+  align-items: center;
+  border-radius: 200px;
+  padding: 12px;
+  box-shadow: 0px 6px 6px 0 rgb(3, 30, 74);
 }
 
 
