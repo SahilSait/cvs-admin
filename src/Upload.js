@@ -6,7 +6,6 @@ import Certification from "./artifacts/contracts/Certification.sol/Certification
 import { ethers } from "ethers";
 import { AiOutlineTag, AiOutlineUser } from "react-icons/ai";
 import slogo from "./assets/logo.png";
-import { jsPDF } from "jspdf";
 
 function getAccessToken() {
   return `${process.env.REACT_APP_ACCESS_TOKEN}`;
@@ -29,8 +28,6 @@ const Upload = () => {
   const [fileName, setFileName] = useState("");
   const [selectedFile, setSelectedFile] = useState();
   const [contractAddress, setContractAddress] = useState("");
-
-  console.log(contractAddress);
 
   const deployDocument = async (name, regNo, fileName, ipfsHash) => {
     console.log(fileName);
@@ -102,8 +99,8 @@ const Upload = () => {
 
   return (
     <div className="outer">
-      <div className="logo"src={slogo}>
-      <img className="up2img" src={slogo}  ></img>
+      <div className="logo" src={slogo}>
+        <img className="up2img" src={slogo}></img>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="inputbox">

@@ -9,22 +9,24 @@ function Signin() {
   const [accountAddress, setAccountAddress] = useState("");
   const [isConnected, setIsConnected] = useState(false);
 
-  const { ethereum } = window;
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
-
   useEffect(() => {
-    const { ethereum } = window;
-    const checkMetamaskAvailability = async () => {
-      if (!ethereum) {
-        sethaveMetamask(false);
-      }
-      sethaveMetamask(true);
-    };
-    checkMetamaskAvailability();
+    try {
+      const { ethereum } = window;
+      const checkMetamaskAvailability = async () => {
+        if (!ethereum) {
+          sethaveMetamask(false);
+        }
+        sethaveMetamask(true);
+      };
+      checkMetamaskAvailability();
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   const connectWallet = async () => {
     try {
+      const { ethereum } = window;
       if (!ethereum) {
         sethaveMetamask(false);
       }
@@ -46,11 +48,14 @@ function Signin() {
           {isConnected ? (
             <div className="address">
               <h3>Wallet Address:</h3>
-              <p className="address2" type="address2">{accountAddress}</p>
+              <p className="address2" type="address2">
+                {accountAddress}
+              </p>
               <p className="info"> CONNECTED ✓</p>
               <Link to="/upload">
                 <button className="documentsupload" type="DOCUMENTS UPLOAD">
-                   UPLOAD DOCUMENTS</button>
+                  UPLOAD DOCUMENTS
+                </button>
               </Link>
             </div>
           ) : (
