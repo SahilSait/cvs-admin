@@ -7,6 +7,6 @@ To get it running on your system, clone this repo and run the following commands
 ```shell
 npm install
 npx hardhat compile
-paste the .env file in the root directory
+# paste the .env file in the root directory
 npm start
 ```
